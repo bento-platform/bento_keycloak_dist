@@ -21,6 +21,7 @@ jobs:
           wget https://github.com/tianon/gosu/releases/download/1.16/gosu-amd64
           wget https://github.com/tianon/gosu/releases/download/1.16/gosu-arm64
           cd ..
+          ls -l && ls -l build/
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2

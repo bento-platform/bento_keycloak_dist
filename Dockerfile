@@ -17,10 +17,10 @@ ENV KC_HOSTNAME_STRICT=false
 ENV KC_PROXY=passthrough
 
 # Copy our custom entrypoint in
-COPY entrypoint.bash .
+COPY ./entrypoint.bash .
 
 # Copy in gosu
-COPY build/gosu-$TARGETARCH /gosu
+COPY ./build/gosu-$TARGETARCH /gosu
 
 # Make gosu executable
 RUN chmod +x /gosu
