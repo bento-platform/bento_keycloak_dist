@@ -18,8 +18,8 @@ jobs:
       - name: Download gosu
         run: |
           cd build
-          wget https://github.com/tianon/gosu/releases/download/1.16/gosu-amd64
-          wget https://github.com/tianon/gosu/releases/download/1.16/gosu-arm64
+          wget https://github.com/tianon/gosu/releases/download/1.17/gosu-amd64
+          wget https://github.com/tianon/gosu/releases/download/1.17/gosu-arm64
           cd ..
           ls -l && ls -l build/
 
