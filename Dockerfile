@@ -10,12 +10,6 @@ USER 0
 # > Disables dynamically resolving the hostname from request headers
 ENV KC_HOSTNAME_STRICT=false
 
-# See https://www.keycloak.org/server/reverseproxy
-# > The proxy forwards the HTTPS connection to Keycloak without terminating TLS.
-# > The secure connections between the server and clients are based on the keys
-# > and certificates used by the Keycloak server.
-ENV KC_PROXY=passthrough
-
 # Copy our custom entrypoint in
 COPY ./entrypoint.bash .
 
