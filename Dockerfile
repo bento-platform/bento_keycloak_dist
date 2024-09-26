@@ -13,6 +13,9 @@ ENV KC_HOSTNAME_STRICT=false
 # Copy our custom entrypoint in
 COPY ./entrypoint.bash .
 
+# Copy in curl - used for service self-healthchecks
+COPY ./build/curl-$TARGETARCH /usr/bin/curl
+
 # Copy in gosu
 COPY ./build/gosu-$TARGETARCH /gosu
 

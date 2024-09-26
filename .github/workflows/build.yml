@@ -15,9 +15,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Download gosu
+      - name: Download curl + gosu
         run: |
           cd build
+          wget https://github.com/stunnel/static-curl/releases/download/8.10.1/curl-linux-x86_64-8.10.1.tar.xz
+          tar -xJf curl-linux-x86_64-8.10.1.tar.xz
+          mv curl curl-amd64
+          rm trurl curl-linux-x86_64-8.10.1.tar.xz
+          wget https://github.com/stunnel/static-curl/releases/download/8.10.1/curl-linux-aarch64-glibc-8.10.1.tar.xz
+          tar -xJf curl-linux-aarch64-glibc-8.10.1.tar.xz
+          mv curl curl-arm64
+          rm trurl curl-linux-aarch64-glibc-8.10.1.tar.xz
           wget https://github.com/tianon/gosu/releases/download/1.17/gosu-amd64
           wget https://github.com/tianon/gosu/releases/download/1.17/gosu-arm64
           cd ..
