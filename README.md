@@ -3,6 +3,13 @@
 Keycloak Docker image distribution for the Bento platform. 
 This is only relevant if a Bento instance is responsible for running its own IdP.
 
+
+## Building for production
+
+To build a production image which is uploaded to the GitHub Container Repository (GHCR), go to the 
+[Actions tab](https://github.com/bento-platform/bento_keycloak_dist/actions) and trigger the Build and Push workflow.
+
+
 ## Building the Docker image locally
 
 First, since the base Keycloak image does not come with a package manager, `gosu` must be downloaded
