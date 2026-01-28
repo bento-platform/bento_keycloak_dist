@@ -1,4 +1,4 @@
-FROM quay.io/keycloak/keycloak:26.1
+FROM quay.io/keycloak/keycloak:26.5
 
 # Required for copying in gosu, since the keycloak image doesn't have a package manager
 ARG TARGETARCH
