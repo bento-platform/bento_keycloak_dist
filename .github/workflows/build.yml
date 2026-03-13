@@ -21,11 +21,11 @@ jobs:
           wget https://github.com/stunnel/static-curl/releases/download/8.19.0/curl-linux-x86_64-glibc-8.19.0.tar.xz
           tar -xJf curl-linux-x86_64-glibc-8.19.0.tar.xz
           mv curl curl-amd64
-          rm trurl curl-linux-x86_64-glibc-8.19.0.tar.xz
+          rm SHA256SUMS curl-linux-x86_64-glibc-8.19.0.tar.xz
           wget https://github.com/stunnel/static-curl/releases/download/8.19.0/curl-linux-aarch64-glibc-8.19.0.tar.xz
           tar -xJf curl-linux-aarch64-glibc-8.19.0.tar.xz
           mv curl curl-arm64
-          rm trurl curl-linux-aarch64-glibc-8.19.0.tar.xz
+          rm SHA256SUMS curl-linux-aarch64-glibc-8.19.0.tar.xz
           wget https://github.com/tianon/gosu/releases/download/1.19/gosu-amd64
           wget https://github.com/tianon/gosu/releases/download/1.19/gosu-arm64
           cd ..
