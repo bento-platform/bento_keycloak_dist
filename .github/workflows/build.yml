@@ -3,6 +3,10 @@ name: Build and push Bento Keycloak distribution
 on:
   workflow_dispatch:
 
+env:
+  STATIC_CURL: "8.23.0-1"
+  GOSU: "1.19"
+
 jobs:
   build-push:
     runs-on: ubuntu-latest
@@ -18,16 +22,16 @@ jobs:
       - name: Download curl + gosu
         run: |
           cd build
-          wget https://github.com/stunnel/static-curl/releases/download/8.21.0/curl-linux-x86_64-glibc-8.21.0.tar.xz
-          tar -xJf curl-linux-x86_64-glibc-8.21.0.tar.xz
+          wget https://github.com/stunnel/static-curl/releases/download/${STATIC_CURL}/curl-linux-x86_64-glibc-${STATIC_CURL}.tar.xz
+          tar -xJf curl-linux-x86_64-glibc-${STATIC_CURL}.tar.xz
           mv curl curl-amd64
-          rm SHA256SUMS curl-linux-x86_64-glibc-8.21.0.tar.xz
-          wget https://github.com/stunnel/static-curl/releases/download/8.21.0/curl-linux-aarch64-glibc-8.21.0.tar.xz
-          tar -xJf curl-linux-aarch64-glibc-8.21.0.tar.xz
+          rm SHA256SUMS curl-linux-x86_64-glibc-${STATIC_CURL}.tar.xz
+          wget https://github.com/stunnel/static-curl/releases/download/${STATIC_CURL}/curl-linux-aarch64-glibc-${STATIC_CURL}.tar.xz
+          tar -xJf curl-linux-aarch64-glibc-${STATIC_CURL}.tar.xz
           mv curl curl-arm64
-          rm SHA256SUMS curl-linux-aarch64-glibc-8.21.0.tar.xz
-          wget https://github.com/tianon/gosu/releases/download/1.19/gosu-amd64
-          wget https://github.com/tianon/gosu/releases/download/1.19/gosu-arm64
+          rm SHA256SUMS curl-linux-aarch64-glibc-${STATIC_CURL}.tar.xz
+          wget https://github.com/tianon/gosu/releases/download/${GOSU}/gosu-amd64
+          wget https://github.com/tianon/gosu/releases/download/${GOSU}/gosu-arm64
           cd ..
           ls -l && ls -l build/
 
